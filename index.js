@@ -36,6 +36,20 @@ class Pizza extends Food {
         }
         this.pizzaType=value
     }
+
+    get pizzaType()  {
+        return this.pizzaType;
+    }
+
+    // static method to call or get PIZZA TYPES
+    static getTypes() {
+        return PIZZA_TYPES
+    }
+
+    // 
+    describing() {
+        return `${this.pizzaType}`
+    }
 }
 
 console.log("\n===== BURGER =====")
