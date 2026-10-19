@@ -17,7 +17,13 @@ class Food{
     get price(){
         return this.#price;
     }
+
+    // polymorphism here i am using a method that child classescan overiide
+    describing(){
+        return `${this.name} costs R${this.price}`;
+    }
 };
+
 
 console.log("\n===== PIZZA=====")
 // INHERITANCE- creating pizza from Food class
