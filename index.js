@@ -19,16 +19,26 @@ class Food{
     }
 };
 
+console.log("\n===== PIZZA=====")
 // INHERITANCE- creating pizza from Food class
+const PIZZA_TYPES = ["margherita", "pepperoni", "hawaiian", "bbq chicken", "veggie"];
 
 class Pizza extends Food {
-    constructor({ name, price, pizzaType}){
+    constructor({ name, price, pizzaType }){
         super({name, price});
-        this.pizzaType = pizzaType;
-        
-    }  
+        this.pizzaType = pizzaType;    
+    } 
+
+    // setter if customer picks pizza that is not in the array there will be an error
+    set pizzaType(value) {
+        if(!PIZZA_TYPES.includes(value)) {
+            throw new Error(`INVALID PIZZA TYPE. CHOOSE FROM: ${PIZZA_TYPES}`)
+        }
+        this.pizzaType=value
+    }
 }
 
+console.log("\n===== BURGER =====")
 // INHERITANCE- creating burger from Food class
 const flavour = ["cheeseBurger", "beefBurger", "ChickenBurger", "hamBurger"]
 class Burger extends Food {
@@ -38,6 +48,7 @@ class Burger extends Food {
     }
 }
 
+console.log("\n===== DRINK =====")
 class Drink extends Food {
     constructor({ name, price, drinkType }){
         super({name, price});
