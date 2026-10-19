@@ -20,16 +20,19 @@ class Food{
 
     // polymorphism here i am using a method that child classescan overiide
     describing(){
-        return `${this.name} costs R${this.price}`;
+        return `${this.name}:  costs: R${this.price}`;
     }
 };
 
 
 console.log("\n===== PIZZA=====");
+
 // INHERITANCE- creating pizza from Food class
 const PIZZA_TYPES = ["margherita", "pepperoni", "hawaiian", "bbq chicken", "veggie"];
 
 class Pizza extends Food {
+    #pizzaType;
+
     constructor({ name, price, pizzaType }){
         super({name, price});
         this.pizzaType = pizzaType;    
@@ -40,11 +43,11 @@ class Pizza extends Food {
         if(!PIZZA_TYPES.includes(value)) {
             throw new Error(`INVALID PIZZA TYPE. CHOOSE FROM: ${PIZZA_TYPES}`)
         }
-        this.pizzaType=value
+        this.#pizzaType=value;
     }
 
     get pizzaType()  {
-        return this.pizzaType;
+        return this.#pizzaType;
     }
 
     // static method to call or get PIZZA TYPES
@@ -54,27 +57,32 @@ class Pizza extends Food {
 
     // 
     describing() {
-        return `${this.pizzaType}`
+        return `${this.pizzaType} ${super.describing()}`
     }
 }
+const piz = new Pizza({ name: "Pizza", price: 120, pizzaType: "hawaiian" })
+console.log(piz.pizzaType);
+console.log(piz.describing());
+console.log(Pizza.getTypes());
+
 console.log("\n===== PIZZA=====");
 
 
-console.log("\n===== BURGER =====")
-// INHERITANCE- creating burger from Food class
-const flavour = ["cheeseBurger", "beefBurger", "ChickenBurger", "hamBurger"]
-class Burger extends Food {
-    constructor({ name, price, burgerFlavour }) {
-        super({name, price});
-        this.burgerFlavour = burgerFlavour;
-    }
-}
+// console.log("\n===== BURGER =====")
+// // INHERITANCE- creating burger from Food class
+// const flavour = ["cheeseBurger", "beefBurger", "ChickenBurger", "hamBurger"]
+// class Burger extends Food {
+//     constructor({ name, price, burgerFlavour }) {
+//         super({name, price});
+//         this.burgerFlavour = burgerFlavour;
+//     }
+// }
 
-console.log("\n===== DRINK =====")
-class Drink extends Food {
-    constructor({ name, price, drinkType }){
-        super({name, price});
-        this.drinkType = drinkType;
+// console.log("\n===== DRINK =====")
+// class Drink extends Food {
+//     constructor({ name, price, drinkType }){
+//         super({name, price});
+//         this.drinkType = drinkType;
 
-    }
-}
+//     }
+// }
