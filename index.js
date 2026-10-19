@@ -36,5 +36,12 @@ class Burger extends Food {
         super({name, price});
         this.burgerFlavour = burgerFlavour;
     }
+}
 
+class Drink extends Food {
+    constructor({ name, price, drinkType }){
+        super({name, price});
+        this.drinkType = drinkType;
+
+    }
 }
