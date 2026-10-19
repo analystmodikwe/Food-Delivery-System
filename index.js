@@ -25,7 +25,7 @@ class Food{
 };
 
 
-console.log("\n===== PIZZA=====")
+console.log("\n===== PIZZA=====");
 // INHERITANCE- creating pizza from Food class
 const PIZZA_TYPES = ["margherita", "pepperoni", "hawaiian", "bbq chicken", "veggie"];
 
@@ -57,6 +57,8 @@ class Pizza extends Food {
         return `${this.pizzaType}`
     }
 }
+console.log("\n===== PIZZA=====");
+
 
 console.log("\n===== BURGER =====")
 // INHERITANCE- creating burger from Food class
