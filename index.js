@@ -70,13 +70,39 @@ console.log("\n===== PIZZA=====");
 
 console.log("\n===== BURGER =====")
 // INHERITANCE- creating burger from Food class
-const flavour = ["cheeseBurger", "beefBurger", "ChickenBurger", "hamBurger"]
+const flavours = ["cheeseBurger", "beefBurger", "ChickenBurger", "hamBurger"];
+
 class Burger extends Food {
+    #burgerFlavour;
+
     constructor({ name, price, burgerFlavour }) {
         super({name, price});
         this.burgerFlavour = burgerFlavour;
     }
+
+    set burgerFlavour(value) {
+        if(!flavours.includes(value)){
+            throw new Error(`INVALID BURGER TYPE CHOOSE FROM: ${flavours}`)
+        }
+        this.#burgerFlavour = value;
+    }
+
+    get burgerFlavour() {
+        return this.#burgerFlavour;
+    }
+
+    static getTypes() {
+        return flavours
+    }
+
+    describing() {
+        return `${this.burgerFlavour} ${super.describing()}`
+    }
 }
+const burg = new Burger ({ name: "Burger", price: 180, burgerFlavour: "ChickenBurger" })
+console.log(burg.burgerFlavour);
+console.log(burg.describing());
+console.log(Burger.getTypes());
 
 console.log("\n===== DRINK =====")
 class Drink extends Food {
