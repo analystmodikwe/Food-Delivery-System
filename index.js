@@ -25,7 +25,7 @@ class Food{
 
     // standard price for delivery
     deliveryFee(){
-        return 20;
+        return 20
     }
 };
 
@@ -73,6 +73,7 @@ class Pizza extends Food {
 const piz = new Pizza({ name: "Pizza", price: 120, pizzaType: "hawaiian" })
 console.log(piz.pizzaType);
 console.log(piz.describing());
+console.log(`DELIVERY FEE: R${piz.deliveryFee()}`);
 console.log(Pizza.getTypes());
 
 console.log("\n===== PIZZA=====");
@@ -113,12 +114,13 @@ class Burger extends Food {
         return super.deliveryFee() + 28
     }
 }
-console.log("\n===== BURGER =====");
 
 const burg = new Burger ({ name: "Burger", price: 180, burgerFlavour: "ChickenBurger" })
 console.log(burg.burgerFlavour);
 console.log(burg.describing());
+console.log(`DELIVERY FEE: R${burg.deliveryFee()}`);
 console.log(Burger.getTypes());
+console.log("\n===== BURGER =====");
 
 
 console.log("\n===== DRINK =====");
@@ -155,8 +157,10 @@ class Drink extends Food {
         return super.deliveryFee() + 5
     }
 }
-console.log("\n===== DRINK =====");
+
 const drin = new Drink ({ name: "Drink", price: 30, drinkType: "Coke" })
 console.log(drin.drinkType);
 console.log(drin.describing());
+console.log(`DELIVERY FEE: R${drin.deliveryFee()}`);
 console.log(Drink.getTypes());
+console.log("\n===== DRINK =====");
