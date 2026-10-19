@@ -64,7 +64,12 @@ class Pizza extends Food {
     describing() {
         return `${this.pizzaType} ${super.describing()}`
     }
+
+    deliveryFee(){
+        return super.deliveryFee() + 30
+    }
 }
+
 const piz = new Pizza({ name: "Pizza", price: 120, pizzaType: "hawaiian" })
 console.log(piz.pizzaType);
 console.log(piz.describing());
@@ -103,6 +108,10 @@ class Burger extends Food {
     describing() {
         return `${this.burgerFlavour} ${super.describing()}`
     }
+
+    deliveryFee(){
+        return super.deliveryFee() + 28
+    }
 }
 console.log("\n===== BURGER =====");
 
@@ -140,6 +149,10 @@ class Drink extends Food {
 
     describing() {
         return `${this.#drinkType} ${super.describing()}`
+    }
+
+    deliveryFee(){
+        return super.deliveryFee() + 5
     }
 }
 console.log("\n===== DRINK =====");
