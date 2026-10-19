@@ -18,3 +18,13 @@ class Food{
         return this.#price;
     }
 }
+
+// INHERITANCE- creating pizza from Food class
+
+class Pizza extends Food {
+    constructor({ name, price, pizzaFlavour, pizzaSize }){
+        super({name, price});
+        this.pizzaFlavour = pizzaFlavour;
+        this.pizzaSize = pizzaSize;
+    }
+}
