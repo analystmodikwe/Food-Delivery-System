@@ -22,10 +22,19 @@ class Food{
 // INHERITANCE- creating pizza from Food class
 
 class Pizza extends Food {
-    constructor({ name, price, pizzaType, pizzaSize }){
+    constructor({ name, price, pizzaType}){
         super({name, price});
         this.pizzaType = pizzaType;
-        this.pizzaSize = pizzaSize;
+        
+    }  
+}
+
+// INHERITANCE- creating burger from Food class
+const flavour = ["cheeseBurger", "beefBurger", "ChickenBurger", "hamBurger"]
+class Burger extends Food {
+    constructor({ name, price, burgerFlavour }) {
+        super({name, price});
+        this.burgerFlavour = burgerFlavour;
     }
-    
+
 }
