@@ -68,21 +68,21 @@ console.log(Pizza.getTypes());
 console.log("\n===== PIZZA=====");
 
 
-// console.log("\n===== BURGER =====")
-// // INHERITANCE- creating burger from Food class
-// const flavour = ["cheeseBurger", "beefBurger", "ChickenBurger", "hamBurger"]
-// class Burger extends Food {
-//     constructor({ name, price, burgerFlavour }) {
-//         super({name, price});
-//         this.burgerFlavour = burgerFlavour;
-//     }
-// }
+console.log("\n===== BURGER =====")
+// INHERITANCE- creating burger from Food class
+const flavour = ["cheeseBurger", "beefBurger", "ChickenBurger", "hamBurger"]
+class Burger extends Food {
+    constructor({ name, price, burgerFlavour }) {
+        super({name, price});
+        this.burgerFlavour = burgerFlavour;
+    }
+}
 
-// console.log("\n===== DRINK =====")
-// class Drink extends Food {
-//     constructor({ name, price, drinkType }){
-//         super({name, price});
-//         this.drinkType = drinkType;
+console.log("\n===== DRINK =====")
+class Drink extends Food {
+    constructor({ name, price, drinkType }){
+        super({name, price});
+        this.drinkType = drinkType;
 
-//     }
-// }
+    }
+}
