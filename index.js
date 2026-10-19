@@ -99,16 +99,46 @@ class Burger extends Food {
         return `${this.burgerFlavour} ${super.describing()}`
     }
 }
+console.log("\n===== BURGER =====");
+
 const burg = new Burger ({ name: "Burger", price: 180, burgerFlavour: "ChickenBurger" })
 console.log(burg.burgerFlavour);
 console.log(burg.describing());
 console.log(Burger.getTypes());
 
-console.log("\n===== DRINK =====")
+
+console.log("\n===== DRINK =====");
+const beverages =["Orange Juice", "Apple Juice", "Coke", "Sprite"]
+// a class for drinks
 class Drink extends Food {
+    #drinkType
+
     constructor({ name, price, drinkType }){
         super({name, price});
         this.drinkType = drinkType;
+    }
 
+    set drinkType(value) {
+        if(!beverages.includes(value)){
+            throw new Error(`INVALID DRINK CHOOSE FROM: ${beverages}`)
+        }
+        this.#drinkType = value;
+    }
+
+    get drinkType() {
+        return this.#drinkType;
+    }
+
+    static getTypes() {
+        return beverages
+    }
+
+    describing() {
+        return `${this.#drinkType} ${super.describing()}`
     }
 }
+console.log("\n===== DRINK =====");
+const drin = new Drink ({ name: "Drink", price: 30, drinkType: "Coke" })
+console.log(drin.drinkType);
+console.log(drin.describing());
+console.log(Drink.getTypes());
