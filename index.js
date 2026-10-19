@@ -22,6 +22,11 @@ class Food{
     describing(){
         return `${this.name}:  costs: R${this.price}`;
     }
+
+    // standard price for delivery
+    deliveryFee(){
+        return 20;
+    }
 };
 
 
