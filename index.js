@@ -2,6 +2,12 @@
 class Food{
     #price = 0
     constructor({ name, price }){
+        
+        // ABSTRACTION- FOOD IS ONLY A BLUE PRINT AND CANNOT BE INSTANTIATED
+        if (new.target === Food){
+            throw new Error("Food is an abstract class and cannot be created directly.");
+        }
+
         this.name = name;
         this.price = price;
     }
