@@ -180,7 +180,7 @@ class Order {
     calculateTotal(){
         let total = 0;
         this.#items.forEach(item => {
-            total += item.price + item.deliveryFee();
+            total += item.price;
         });
         return total;
     }
@@ -242,8 +242,8 @@ class Salad extends Food {
     }
 }
 
-console.log("\n===== SALAD =====");
 const salad = new Salad({ name: "Salad", price: 50, saladType: "Caesar Salad" });
 console.log(salad.saladType);
 console.log(salad.describing());
 console.log(`DELIVERY FEE: R${salad.deliveryFee()}`);
+console.log("\n===== SALAD =====");
