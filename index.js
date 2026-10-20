@@ -165,7 +165,9 @@ console.log(`DELIVERY FEE: R${drin.deliveryFee()}`);
 console.log(Drink.getTypes());
 console.log("\n===== DRINK =====");
 
-// 
+
+console.log("\n===== Order =====");
+
 class Order {
     #items = []; //private list of food items
 
@@ -212,5 +214,29 @@ class Order {
 }
 const order = new Order();
 order.addItem(burg);
-order.addItem(drin);
+// order.addItem(drin);
 console.log(order.viewOrder());
+console.log("\n===== Order =====");
+
+console.log("\n===== SALAD =====");
+// additional food type
+class Salad extends Food {
+    #saladType;
+
+    constructor({ name, price, saladType }){
+        super({name, price});
+        this.#saladType = saladType;
+    }
+
+    get saladType() {
+        return this.#saladType;
+    }
+
+    describing() {
+        return `${this.#saladType} ${super.describing()}`
+    }
+
+    deliveryFee(){
+        return super.deliveryFee() + 3
+    }
+}
