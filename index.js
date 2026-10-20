@@ -205,9 +205,9 @@ class Order {
         console.log("ORDER SUMMARY:");
         this.#items.forEach(item => {
             console.log(item.describing());
-            total += item.price + item.deliveryFee();
+            // total += item.price + item.deliveryFee();
         });
-        console.log(`TOTAL COST: R${total}`);
+        console.log(`SUBTOTAL: R${this.calculateTotal()}`);
         console.log(`TOTAL DELIVERY FEE: R${this.calculateDeliveryFee()}`);
         console.log(`FINAL TOTAL: R${this.calculateFinalTotal()}`);
     }
