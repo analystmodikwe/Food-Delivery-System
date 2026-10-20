@@ -62,7 +62,7 @@ class Pizza extends Food {
 
     // 
     describing() {
-        return `${this.pizzaType} ${super.describing()}`
+        return ` ${this.pizzaType} ${super.describing()}  `
     }
 
     deliveryFee(){
@@ -164,3 +164,37 @@ console.log(drin.describing());
 console.log(`DELIVERY FEE: R${drin.deliveryFee()}`);
 console.log(Drink.getTypes());
 console.log("\n===== DRINK =====");
+
+// 
+class Order {
+    #items = []; //private list of food items
+
+    // adding any foot item to the order 
+    addItem(item){
+        this.#items.push(item)
+    }
+
+    // calculating total cost of food items in the order
+    calculateTotal(){
+        let total = 0;
+        this.#items.forEach(item => {
+            total += item.price + item.deliveryFee();
+        });
+        return total;
+    }
+
+    // veiwing the order with all the items and their prices
+    viewOrder(){
+        let total = 0;
+        console.log("ORDER SUMMARY:");
+        this.#items.forEach(item => {
+            console.log(item.describing());
+            total += item.price + item.deliveryFee();
+        });
+        console.log(`TOTAL COST: R${total}`);
+    }
+}
+const order = new Order();
+order.addItem(burg);
+order.addItem(drin);
+console.log(order.viewOrder());
