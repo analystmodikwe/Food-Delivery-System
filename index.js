@@ -183,6 +183,15 @@ class Order {
         return total;
     }
 
+    // calculating delivery fee for all the items in the order
+    calculateDeliveryFee(){
+        let totalDeliveryFee = 0;
+        this.#items.forEach(item => {
+            totalDeliveryFee += item.deliveryFee();
+        });
+        return totalDeliveryFee;
+    }
+
     // veiwing the order with all the items and their prices
     viewOrder(){
         let total = 0;
@@ -192,6 +201,7 @@ class Order {
             total += item.price + item.deliveryFee();
         });
         console.log(`TOTAL COST: R${total}`);
+        console.log(`TOTAL DELIVERY FEE: R${this.calculateDeliveryFee()}`);
     }
 }
 const order = new Order();
