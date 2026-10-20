@@ -42,6 +42,7 @@ console.log("\n===== PIZZA=====");
 const PIZZA_TYPES = ["margherita", "pepperoni", "hawaiian", "bbq chicken", "veggie"];
 
 class Pizza extends Food {
+    // ecapsulation and setter will reject any pizza type that is not in the array
     #pizzaType;
 
     constructor({ name, price, pizzaType }){
