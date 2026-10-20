@@ -218,6 +218,7 @@ order.addItem(burg);
 console.log(order.viewOrder());
 console.log("\n===== Order =====");
 
+
 console.log("\n===== SALAD =====");
 // additional food type
 class Salad extends Food {
@@ -242,3 +243,7 @@ class Salad extends Food {
 }
 
 console.log("\n===== SALAD =====");
+const salad = new Salad({ name: "Salad", price: 50, saladType: "Caesar Salad" });
+console.log(salad.saladType);
+console.log(salad.describing());
+console.log(`DELIVERY FEE: R${salad.deliveryFee()}`);
