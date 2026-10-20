@@ -240,3 +240,5 @@ class Salad extends Food {
         return super.deliveryFee() + 3
     }
 }
+
+console.log("\n===== SALAD =====");
