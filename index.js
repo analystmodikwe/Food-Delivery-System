@@ -215,7 +215,7 @@ class Order {
 const order = new Order();
 order.addItem(burg);
 // order.addItem(drin);
-console.log(order.viewOrder());
+order.viewOrder();
 console.log("\n===== Order =====");
 
 
